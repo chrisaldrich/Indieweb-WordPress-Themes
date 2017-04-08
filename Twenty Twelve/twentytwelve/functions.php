@@ -404,7 +404,7 @@ function twentytwelve_entry_meta() {
 		esc_html( get_the_date() )
 	);
 
-	$author = sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
+	$author = sprintf( '<span class="author p-author vcard h-card" itemprop="creator" itemscope itemtype="http://schema.org/Person"><a class="url u-url fn n p-name" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 		esc_attr( sprintf( __( 'View all posts by %s', 'twentytwelve' ), get_the_author() ) ),
 		get_the_author()
