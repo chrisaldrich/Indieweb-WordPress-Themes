@@ -16,14 +16,15 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-				<article id="post-<?php the_ID(); ?>" <?php post_class( 'image-attachment' ); ?>>
+				<article id="post-<?php the_ID(); ?>" <?php post_class( 'image-attachment' ); ?>itemscope itemtype="http://schema.org/ImageObject">
 					<header class="entry-header">
-						<h1 class="entry-title"><?php the_title(); ?></h1>
+						<h1 class="entry-title p-entry-title" itemprop="name"><?php the_title(); ?></h1>
 
 						<footer class="entry-meta">
 							<?php
 								$metadata = wp_get_attachment_metadata();
-								printf( __( '<span class="meta-prep meta-prep-entry-date">Published </span> <span class="entry-date"><time class="entry-date" datetime="%1$s">%2$s</time></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%8$s</a>.', 'twentytwelve' ),
+											
+								printf( __( '<span class="meta-prep meta-prep-entry-date">Published </span> <span class="entry-date"><time class="updated dt-updated" datetime="%1$s">%2$s</time></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%8$s</a>.', 'twentytwelve' ),
 									esc_attr( get_the_date( 'c' ) ),
 									esc_html( get_the_date() ),
 									esc_url( wp_get_attachment_url() ),
@@ -43,7 +44,7 @@ get_header(); ?>
 						</nav><!-- #image-navigation -->
 					</header><!-- .entry-header -->
 
-					<div class="entry-content">
+					<div class="entry-content e-content" itemprop="description">
 
 						<div class="entry-attachment">
 							<div class="attachment">
