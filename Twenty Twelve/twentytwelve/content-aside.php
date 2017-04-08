@@ -10,8 +10,8 @@
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<div class="aside">
-			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-			<div class="entry-content">
+			<h1 class="entry-title p-name" itemprop="name description"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+			<div class="entry-content e-content p-summary entry-title p-name" itemprop="name headline description articleBody">
 				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentytwelve' ) ); ?>
 			</div><!-- .entry-content -->
 		</div><!-- .aside -->
