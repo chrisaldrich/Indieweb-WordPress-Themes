@@ -24,7 +24,7 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 			<header class="archive-header">
-				<h1 class="archive-title"><?php
+				<h1 class="archive-title p-entry-title"><?php
 					if ( is_day() ) :
 						printf( __( 'Daily Archives: %s', 'twentytwelve' ), '<span>' . get_the_date() . '</span>' );
 					elseif ( is_month() ) :
