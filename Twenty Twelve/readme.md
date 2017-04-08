@@ -1,0 +1,1 @@
+Twenty Twelve child theme
