@@ -46,10 +46,10 @@ get_header(); ?>
 				// Show the default message to everyone else.
 			?>
 				<header class="entry-header">
-					<h1 class="entry-title"><?php _e( 'Nothing Found', 'twentytwelve' ); ?></h1>
+					<h1 class="entry-title p-entry-title"><?php _e( 'Nothing Found', 'twentytwelve' ); ?></h1>
 				</header>
 
-				<div class="entry-content">
+				<div class="entry-content e-entry-content">
 					<p><?php _e( 'Apologies, but no results were found. Perhaps searching will help find a related post.', 'twentytwelve' ); ?></p>
 					<?php get_search_form(); ?>
 				</div><!-- .entry-content -->
