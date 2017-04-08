@@ -10,10 +10,10 @@
 
 	<article id="post-0" class="post no-results not-found">
 		<header class="entry-header">
-			<h1 class="entry-title"><?php _e( 'Nothing Found', 'twentytwelve' ); ?></h1>
+			<h1 class="entry-title entry-summary p-summary p-name" itemprop="name description"><?php _e( 'Nothing Found', 'twentytwelve' ); ?></h1>
 		</header>
 
-		<div class="entry-content">
+		<div class="entry-content e-content p-name" itemprop="name headline description articleBody">
 			<p><?php _e( 'Apologies, but no results were found. Perhaps searching will help find a related post.', 'twentytwelve' ); ?></p>
 			<?php get_search_form(); ?>
 		</div><!-- .entry-content -->
