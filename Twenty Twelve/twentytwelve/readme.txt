@@ -1,4 +1,4 @@
-=== TwentyTwelve  IndieWeb ===
+=== TwentyTwelve IndieWeb ===
 Contributors: the WordPress team, Chris Aldrich
 Requires at least: WordPress 3.5
 Tested up to: WordPress 4.8-trunk
