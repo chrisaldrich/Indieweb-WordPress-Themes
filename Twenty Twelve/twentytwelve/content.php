@@ -36,21 +36,23 @@
 		</header><!-- .entry-header -->
 
 		<?php if ( is_search() ) : // Only display Excerpts for Search ?>
-		<div class="entry-summary">
+		<div class="entry-summary p-summary entry-title p-name" itemprop="name description">
+
 			<?php the_excerpt(); ?>
 		</div><!-- .entry-summary -->
 		<?php else : ?>
-		<div class="entry-content">
+		<div class="entry-content e-content p-summary entry-title p-name" itemprop="name headline description articleBody">
+
 			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentytwelve' ) ); ?>
 			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'twentytwelve' ), 'after' => '</div>' ) ); ?>
 		</div><!-- .entry-content -->
-		<?php endif; ?>
-
+		<?php endif; ?>	
+		
 		<footer class="entry-meta">
 			<?php twentytwelve_entry_meta(); ?>
 			<?php edit_post_link( __( 'Edit', 'twentytwelve' ), '<span class="edit-link">', '</span>' ); ?>
 			<?php if ( is_singular() && get_the_author_meta( 'description' ) && is_multi_author() ) : // If a user has filled out their description and this is a multi-author blog, show a bio on their entries. ?>
-				<div class="author-info">
+				<div class="author-info author vcard h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
 					<div class="author-avatar">
 						<?php
 						/** This filter is documented in author.php */
@@ -58,11 +60,11 @@
 						echo get_avatar( get_the_author_meta( 'user_email' ), $author_bio_avatar_size );
 						?>
 					</div><!-- .author-avatar -->
-					<div class="author-description">
+					<div class="author-description p-note" itemprop="description">
 						<h2><?php printf( __( 'About %s', 'twentytwelve' ), get_the_author() ); ?></h2>
 						<p><?php the_author_meta( 'description' ); ?></p>
-						<div class="author-link">
-							<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
+						<div class="author-link u-url fn p-fn n p-name">
+							<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author" itemprop="url">
 								<?php printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>', 'twentytwelve' ), get_the_author() ); ?>
 							</a>
 						</div><!-- .author-link	-->
