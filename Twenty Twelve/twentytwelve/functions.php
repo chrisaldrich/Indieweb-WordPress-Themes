@@ -343,8 +343,8 @@ function twentytwelve_comment( $comment, $args, $depth ) {
 		global $post;
 	?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-		<article id="comment-<?php comment_ID(); ?>" class="comment">
-			<header class="comment-meta comment-author vcard">
+		<article id="comment-<?php comment_ID(); ?>" class="comment u-comment h-cite">
+			<header class="comment-meta comment-author u-author h-card">
 				<?php
 					echo get_avatar( $comment, 44 );
 					printf( '<cite><b class="fn">%1$s</b> %2$s</cite>',
@@ -352,7 +352,7 @@ function twentytwelve_comment( $comment, $args, $depth ) {
 						// If current post author is also comment author, make it known visually.
 						( $comment->user_id === $post->post_author ) ? '<span>' . __( 'Post author', 'twentytwelve' ) . '</span>' : ''
 					);
-					printf( '<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
+					printf( '<a href="%1$s"><time class="dt-published" datetime="%2$s">%3$s</time></a>',
 						esc_url( get_comment_link( $comment->comment_ID ) ),
 						get_comment_time( 'c' ),
 						/* translators: 1: date, 2: time */
@@ -365,7 +365,7 @@ function twentytwelve_comment( $comment, $args, $depth ) {
 				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'twentytwelve' ); ?></p>
 			<?php endif; ?>
 
-			<section class="comment-content comment">
+			<section class="comment-content comment p-content p-name">
 				<?php comment_text(); ?>
 				<?php edit_comment_link( __( 'Edit', 'twentytwelve' ), '<p class="edit-link">', '</p>' ); ?>
 			</section><!-- .comment-content -->
